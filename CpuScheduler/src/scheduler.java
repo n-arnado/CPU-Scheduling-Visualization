@@ -23,7 +23,7 @@ public class scheduler {
             }
             p.startTime - currentTime;
             currentTime += p.burstTime;
-            p,completionTime = currentTime;
+            p.completionTime = currentTime;
             
             ganttChart.add("| " + p.processId + " ");
     
@@ -44,5 +44,24 @@ public class scheduler {
 
     public void roundRobin(List<Process> processes, int timeQuantum) {
         // implementation
+    }
+
+    public void calculateMetrics(List<Process>process) {
+    double totalTat = 0, totalRT = 0;
+
+    for (Process p : process) {
+        p.turnarroundTime= p.completionTime - p.arrivalTime;
+        p.responseTime = p.startTime - p.arrivalTime;
+        totalTAT +=  p.turnarroundTime;
+        totalRT += p.responseTime;
+    }
+
+        System.out.printf("%-7s %-10s %-8s %15s %15s %13s\n", "PID", "Arrival", "Burst", "Completion", "Turnarround", "Response");
+
+        for (Process p : process){
+            p.display();
+        }
+        System.out.print("\n Average Turnarround Time: %.2f\n", totaTAT/process.size());
+        System.out.print("\n Average Response Time: %.2f\n", totalRT/process.size());
     }
 }
