@@ -26,7 +26,7 @@ public class Process {
     }
     
     //setters
-    public void setProcessId(String processID){
+    public void setProcessId(String processId){
         this.processId  = processId;
     }
     
