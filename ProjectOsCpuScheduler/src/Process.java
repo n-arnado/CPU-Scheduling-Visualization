@@ -8,7 +8,7 @@
  * @author Nj Arnado
  */
 public class Process {
-    private String processId;
+    private final String processId;
     private int arrivalTime;
     private int burstTime;
     private int completionTime;
