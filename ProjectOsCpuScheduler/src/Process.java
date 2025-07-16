@@ -16,6 +16,7 @@ public class Process {
     private int responseTime;
     private int remainingTime;
     private int startTime;
+    private int waitingTime;
     
     public Process(String id, int arrivalTime, int burstTime){
     this.processId = id;
@@ -26,9 +27,7 @@ public class Process {
     }
     
     //setters
-    public void setProcessId(String processId){
-        this.processId  = processId;
-    }
+    
     
     public void setArrivalTime(int arrivalTime){
         this.arrivalTime = arrivalTime;
@@ -44,13 +43,16 @@ public class Process {
         this.completionTime =completionTime;
     }
     public void setTurnaroundTime(int turnaroundTime) { 
-    this.turnaroundTime = turnaroundTime; 
+        this.turnaroundTime = turnaroundTime; 
     }
     public void setResponseTime(int responseTime) {
-    this.responseTime = responseTime; 
+        this.responseTime = responseTime; 
     }
     public void setStartTime(int startTime) {
-    this.startTime = startTime; 
+        this.startTime = startTime; 
+    }
+    public void setWaitingTime(int waitingTime){
+       this.waitingTime = waitingTime;
     }
    
     //getters
@@ -78,10 +80,13 @@ public class Process {
     public int getStartTime() {
         return startTime; 
     }
+    public int getWaitingTime(){
+        return waitingTime;
+    }
     
         //display method (for table)
     public void display(){
-        System.out.printf("%-7s %-10d %-8d %-15d %-15d %-13d\n",processId, arrivalTime,burstTime, completionTime, turnaroundTime, responseTime );
+        System.out.printf("%-9s %-15d %-10d %-18d %-16d %-15 %-15d\n",processId, arrivalTime,burstTime, completionTime, turnaroundTime, responseTime, waitingTime );
         
 }
 }
