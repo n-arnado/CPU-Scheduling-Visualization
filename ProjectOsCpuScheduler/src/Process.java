@@ -81,7 +81,7 @@ public class Process {
     
         //display method (for table)
     public void display(){
-        System.out.printf(%-7s %-10d %-8d %-15d %-15d %-13d\n",processId, arrivalTime,bursTime, completionTime, turnaroundTime, responseTime );
+        System.out.printf("%-7s %-10d %-8d %-15d %-15d %-13d\n",processId, arrivalTime,burstTime, completionTime, turnaroundTime, responseTime );
         
 }
 }
