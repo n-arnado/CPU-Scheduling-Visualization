@@ -37,7 +37,7 @@ public class Process {
         this.burstTime = burstTime;
         this.remainingTime = burstTime;
     }
-    public void setReamainingTime(int remainingTime){
+    public void setRemainingTime(int remainingTime){
         this.remainingTime = remainingTime;
     }
     public void setCompletionTime(int completionTime){
