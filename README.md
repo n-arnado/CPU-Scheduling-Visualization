@@ -35,7 +35,7 @@ Round Robin (RR)-	Each process gets a fixed time quantum and is rotated in a que
 (MLFQ)-	Uses multiple levels of queues with different time quanta, promoting/demoting processes based on behavior.
 
 **Known Issues**
-GUI Version is still improved.
+GUI Version is improved but there are things not yet cosidered.
 Input validation is minimal. Ensure correct values are entered.
 No file I/O: Results are shown only in the terminal and are not saved.
 
