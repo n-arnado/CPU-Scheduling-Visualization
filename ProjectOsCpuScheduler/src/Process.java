@@ -20,12 +20,7 @@ public class Process {
     private int startTime;
     private int waitingTime;
 
-    /**
-     * Constructor for a Process.
-     * @param id The unique identifier for the process.
-     * @param arrivalTime The time at which the process arrives in the ready queue.
-     * @param burstTime The total CPU time required for the process to complete.
-     */
+    
     public Process(String id, int arrivalTime, int burstTime){
         this.processId = id;
         this.arrivalTime = arrivalTime;
