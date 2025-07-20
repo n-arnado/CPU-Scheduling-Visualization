@@ -1,3 +1,5 @@
+package srcs;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -17,18 +19,24 @@ public class Process {
     private int remainingTime;
     private int startTime;
     private int waitingTime;
-    
+
+    /**
+     * Constructor for a Process.
+     * @param id The unique identifier for the process.
+     * @param arrivalTime The time at which the process arrives in the ready queue.
+     * @param burstTime The total CPU time required for the process to complete.
+     */
     public Process(String id, int arrivalTime, int burstTime){
-    this.processId = id;
-    this.arrivalTime = arrivalTime;
-    this.burstTime = burstTime;
-    this.remainingTime = burstTime; //this is for the SRTF
-    this.startTime = -1; //it will be updated
+        this.processId = id;
+        this.arrivalTime = arrivalTime;
+        this.burstTime = burstTime;
+        this.remainingTime = burstTime; // Initial remaining time is full burst time
+        this.startTime = -1; // -1 indicates the process has not started execution yet
+        this.waitingTime = 0; // Initialize waiting time
+        this.completionTime = 0; // Initialize completion time
     }
-    
-    //setters
-    
-    
+
+    // --- Setters ---
     public void setArrivalTime(int arrivalTime){
         this.arrivalTime = arrivalTime;
     }
@@ -40,22 +48,22 @@ public class Process {
         this.remainingTime = remainingTime;
     }
     public void setCompletionTime(int completionTime){
-        this.completionTime =completionTime;
+        this.completionTime = completionTime;
     }
-    public void setTurnaroundTime(int turnaroundTime) { 
-        this.turnaroundTime = turnaroundTime; 
+    public void setTurnaroundTime(int turnaroundTime) {
+        this.turnaroundTime = turnaroundTime;
     }
     public void setResponseTime(int responseTime) {
-        this.responseTime = responseTime; 
+        this.responseTime = responseTime;
     }
     public void setStartTime(int startTime) {
-        this.startTime = startTime; 
+        this.startTime = startTime;
     }
     public void setWaitingTime(int waitingTime){
-       this.waitingTime = waitingTime;
+        this.waitingTime = waitingTime;
     }
-   
-    //getters
+
+    // --- Getters ---
     public String getProcessId(){
         return processId;
     }
@@ -72,21 +80,25 @@ public class Process {
         return completionTime;
     }
     public int getTurnaroundTime() {
-        return turnaroundTime; 
+        return turnaroundTime;
     }
     public int getResponseTime() {
-        return responseTime; 
+        return responseTime;
     }
     public int getStartTime() {
-        return startTime; 
+        return startTime;
     }
     public int getWaitingTime(){
         return waitingTime;
     }
     
-        //display method (for table)
+    /**
+     * Displays process information to the console (for debugging/console output).
+     * Not directly used by the GUI.
+     */
     public void display(){
-        System.out.printf("%-9s %-15d %-10d %-18d %-16d %-15 %-15d\n",processId, arrivalTime,burstTime, completionTime, turnaroundTime, responseTime, waitingTime );
-        
-}
+        System.out.printf("%-9s %-10s %-10s %-14s %-13s %-13s %-12s\n",
+                          processId, arrivalTime, burstTime, completionTime,
+                          turnaroundTime, responseTime, waitingTime);
+    }
 }
