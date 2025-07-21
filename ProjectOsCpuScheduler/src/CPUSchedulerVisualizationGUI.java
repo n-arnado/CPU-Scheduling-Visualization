@@ -1097,4 +1097,3 @@ import javax.swing.event.ChangeListener;
         SwingUtilities.invokeLater(() -> new CPUSchedulerVisualizationGUI());
     }
 }
-
